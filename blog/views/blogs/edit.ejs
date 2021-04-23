@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">My Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/blogs">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/blogs/new ">New</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div style="margin: 20px">
+        <h1 style="margin-bottom: 20px;">Edit Blog</h1>
+        <form action="/blogs/<%= blogs.id %>?_method=PATCH " method="POST">
+            <label for="title" style="font-weight: bold;">Title</label><br>
+            <textarea name="title" cols="100" rows="1" id="title"><%= blogs.title %></textarea>
+            <br><br>
+            <label for="img" style="font-weight: bold;">Image</label><br>
+            <textarea name="image" cols="100" rows="2" id="img"><%= blogs.image %></textarea><br><br>
+            <label for="text" style="font-weight: bold;">Text</label><br>
+            <textarea name="text"  cols="100" rows="9" id="text"><%= blogs.text %></textarea><br>
+            <button class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    
+</body>
+</html>

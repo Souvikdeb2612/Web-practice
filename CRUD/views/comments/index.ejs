@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <%for(let c of comment){%>
+            <li><%=c.id%><br><strong><%=c.text%></strong> - <%=c.name%></li>
+            <a href="/comments/<%= c.id %> ">view</a>
+            <a href="/comments/<%= c.id %>/edit">edit</a>
+            <form method="POST" action="/comments/<%=c.id %>?_method=DELETE ">
+                <button>Delete</button>
+            </form>
+        <%}%>
+        
+    </ul>
+
+    <a href="/comments/update">add</a>
+
+    
+</body>
+</html>
